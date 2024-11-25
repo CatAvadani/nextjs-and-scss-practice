@@ -1,0 +1,31 @@
+.form-container {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  gap: 1rem;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: rgb(139, 13, 158);
+  }
+  input {
+    padding: 1rem;
+  }
+  .submit-btn {
+    padding: 1rem;
+    background-color: rgb(139, 13, 158);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    &:hover {
+      background-color: rgb(79, 31, 86);
+      transition: all 0.3s;
+    }
+  }
+}

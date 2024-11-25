@@ -2,39 +2,33 @@
   background-color: rgb(243, 204, 249);
   height: 100vh;
   display: flex;
+  gap: 1rem;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 
-  .form-container {
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: rgb(139, 13, 158);
+  }
+  .todo-item {
     display: flex;
     flex-direction: column;
-    width: 50%;
     gap: 1rem;
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-
-    h1 {
-      text-align: center;
-      margin-bottom: 20px;
-      color: rgb(139, 13, 158);
-    }
-    input {
+    width: 50%;
+    justify-content: space-between;
+    align-items: start;
+    padding: 10px;
+    background-color: hsla(0, 0%, 100%, 0.3);
+    h2 {
+      color: rgb(48, 17, 52);
+      border-bottom: 1px solid rgba(48, 17, 52, 0.1);
+      padding-bottom: 5px;
       width: 100%;
-      padding: 1rem;
     }
-    .submit-btn {
-      padding: 1rem;
-      background-color: rgb(139, 13, 158);
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      &:hover {
-        background-color: rgb(79, 31, 86);
-        transition: all 0.3s;
-      }
+    p {
+      color: rgb(48, 17, 52);
     }
   }
 }

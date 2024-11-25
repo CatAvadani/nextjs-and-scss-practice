@@ -1,58 +1,25 @@
 'use client';
-import { ChangeEvent, useState } from 'react';
+import { useState } from 'react';
+import TodoForm, { FormData } from './components/todoForm';
 import './page.scss';
 
-interface FormData {
-  id: number;
-  title: string;
-  description: string;
-}
-
 export default function Home() {
-  const [formData, setFromData] = useState<FormData>({
-    id: Date.now(),
-    title: '',
-    description: '',
-  });
+  const [todos, setTodos] = useState<FormData[]>([]);
 
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    setFromData({
-      ...formData,
-      [name]: value,
-    });
+  const addTodo = (todo: FormData) => {
+    setTodos([...todos, todo]);
   };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    const newFromData = {
-      title: '',
-      description: '',
-    };
-    setFromData((prev) => ({ ...prev, ...newFromData }));
-    console.log(formData);
-  };
-
+  console.log('todos', todos);
   return (
     <div className='main-container'>
-      <form onSubmit={handleSubmit} className='form-container'>
-        <h1>Hello, Next.js!</h1>
-        <input
-          name='title'
-          value={formData.title}
-          onChange={handleChange}
-          type='text'
-          placeholder='Enter title'
-        />
-        <input
-          name='description'
-          value={formData.description}
-          onChange={handleChange}
-          type='text'
-          placeholder='Enter description'
-        />
-        <button className='submit-btn'>Submit</button>
-      </form>
+      <TodoForm addTodo={addTodo} />
+      {todos &&
+        todos.map((todo) => (
+          <div key={todo.id} className='todo-item '>
+            <h2 className='todo-text'>{todo.title}</h2>
+            <p className='todo-text'>{todo.description}</p>
+          </div>
+        ))}
     </div>
   );
 }
