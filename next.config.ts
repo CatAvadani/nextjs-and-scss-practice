@@ -5,6 +5,14 @@ const nextConfig: NextConfig = {
   sassOptions: {
     additionalData: `$var: red;`,
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'static.tvmaze.com',
+      },
+    ],
+  },
 };
 
 export default nextConfig;

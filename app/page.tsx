@@ -1,6 +1,6 @@
 'use client';
 import { useState } from 'react';
-import TodoForm, { FormData } from './components/todoForm';
+import TodoForm, { FormData } from './components/todoForm/todoForm';
 import './page.scss';
 
 export default function Home() {

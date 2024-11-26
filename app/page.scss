@@ -1,6 +1,7 @@
 .main-container {
-  background-color: rgb(243, 204, 249);
-  height: 100vh;
+  background: rgb(240, 216, 250);
+  min-height: 100vh;
+  height: 100%;
   display: flex;
   gap: 1rem;
   flex-direction: column;
@@ -30,5 +31,17 @@
     p {
       color: rgb(48, 17, 52);
     }
+  }
+}
+.link {
+  font-size: 1.2rem;
+  font-weight: bold;
+  background-color: rgba(178, 111, 188, 0.8);
+  transition: all 0.3s ease;
+  padding: 10px;
+  border: 1px solid rgba(73, 18, 81, 0.8);
+  border-radius: 5px;
+  &:hover {
+    background-color: rgba(243, 204, 249, 1);
   }
 }
